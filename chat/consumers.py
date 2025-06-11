@@ -60,7 +60,7 @@ class ChatConsumer(WebsocketConsumer):
                 }
             )
         except Exception as e:
-            print("THERE IS A ERROR RIGHT HERE IN RECEIVE: ", e)
+            print("THERE IS AN ERROR RIGHT HERE IN RECEIVE: ", e)
 
     def chat_message(self, event):
         message = event["message"]
