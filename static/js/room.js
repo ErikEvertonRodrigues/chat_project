@@ -13,6 +13,7 @@ chatSocket.onopen = function(e) {
 };
 
 chatSocket.onmessage = function(e) {
+    data = JSON.parse(e.data);
     if (data.type == "chat.history") {
         appendMessage(data.sender, data.message, data.timestamp, true);
     } else {
