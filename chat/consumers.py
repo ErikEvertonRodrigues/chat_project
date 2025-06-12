@@ -22,7 +22,6 @@ class ChatConsumer(WebsocketConsumer):
 
 
         for message in messages:
-            print(message.sender.username)
             self.send(text_data=json.dumps({
                 "type": "chat.history",
                 "message": message.content,

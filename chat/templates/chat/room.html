@@ -1,11 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat Room</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block title %} Chats {% endblock %}
+
+{% block content %}
+
     <div id="chat-log"></div>
     <input id="chat-message-input" type="text" size="100"><br>
     <input id="chat-message-submit" type="button" value="Send">
@@ -26,16 +24,11 @@
             };
 
             chatSocket.onmessage = function(e) {
-                console.log("Received message from server:", e.data);
-                const data = JSON.parse(e.data);
-                console.log("parsed", data)
                 if (data.type == "chat.history") {
                     appendMessage(data.sender, data.message, data.timestamp, true);
                 } else {
                     appendMessage(data.sender, data.message, data.timestamp, false);
                 }
-                console.error("Failed to parse message:", e.data, err);
-
             };
 
             function appendMessage(sender, message, timestamp, isHistory) {
@@ -67,5 +60,4 @@
                 messageInputDom.value = '';
             };
     </script>
-</body>
-</html>
+{% endblock %}
