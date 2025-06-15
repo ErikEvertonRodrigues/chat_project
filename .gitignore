@@ -1,1 +1,6 @@
 db.sqlite3
+
+#node.js dependencies
+node_modules/
+static/css/output.css
+

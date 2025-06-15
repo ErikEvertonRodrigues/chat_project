@@ -1,0 +1,24 @@
+{
+  "name": "chat_project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "tailwind:watch": "npx tailwindcss -i static/css/input.css -o static/css/output.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ErikEvertonRodrigues/chat_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ErikEvertonRodrigues/chat_project/issues"
+  },
+  "homepage": "https://github.com/ErikEvertonRodrigues/chat_project#readme",
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.10",
+    "tailwindcss": "^4.1.10"
+  }
+}
