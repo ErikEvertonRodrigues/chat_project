@@ -4,12 +4,11 @@
 
 {% block head_extra %} 
 {% load static %}
-<script src="{% static 'js/login.js' %}" defer></script>
 {% endblock head_extra %}
 
 {% block content %}
-    <main class="h-screen bg-login-background flex justify-center items-center">
-        <div class="h-[20em] min-w-[20em] bg-login-div-background rounded-md p-6">
+    <main class="h-screen bg-auth-background flex justify-center items-center">
+        <div class="h-[20em] min-w-[20em] bg-auth-div-background rounded-md p-6">
             <h1 class="text-center text-[24px] font-bold ">Login</h1>
             <form class="flex h-[calc(100%-36px)] flex-col justify-around" method="post">
                 {% csrf_token %}
@@ -27,8 +26,13 @@
                     <input class="outline outline-blue-600 w-[100%] p-2 rounded-[5px]" id="password" type="password" name="password" placeholder="Password" required>
                 </div>
                 <p>Don't have an account <a class="text-blue-600 visited:text-purple-600 underline" href="/accounts/register/">Register</a></p>
-                <button class="h-[40px] w-[100%] bg-login-button cursor-pointer text-white font-bold rounded-[10px]" type="submit">Log-in</button>
+                <button class="h-[40px] w-[100%] bg-auth-button cursor-pointer text-white font-bold rounded-[10px]" type="submit">Log-in</button>
             </form>
         </div>
     </main>
+
+    <script defer>
+        document.getElementById("username").focus();
+    </script>
+
 {% endblock %} 

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-    --color-login-background: #B9DAFD;
-    --color-login-div-background: #E2F2FF;
-    --color-login-button: #247DEC;
+    --color-auth-background: #B9DAFD;
+    --color-auth-div-background: #E2F2FF;
+    --color-auth-button: #247DEC;
 }
