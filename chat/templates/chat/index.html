@@ -3,9 +3,13 @@
 {% block title %} Chats {% endblock %}
 
 {% block content %}
-    <h1>It's good to see you here, {{ request.user.username }}</h1>
-    <input id="room-name-input" type="text" size="100"><br>
-    <input id="room-name-submit" type="button" value="Enter">
+    <main class="h-screen bg-index-background flex justify-center items-center">
+        <div class="w-full max-w-[20em] h-[12em] rounded-md bg-white flex flex-col justify-evenly p-4">
+            <h1 class="text-[20px] font-bold">It's good to see you here, <strong class="text-amber-700">{{ request.user.username }}</strong></h1>
+            <input class="w-full outline outline-index-input rounded-md  p-2" id="room-name-input" type="text" size="100" placeholder="Enter a room name"><br>
+            <input class="w-full h-[40px] bg-index-input rounded-md font-bold text-white" id="room-name-submit" type="button" value="Enter">
+        </div>
+    </main>
 
     {% load static %}
     <script src="{% static 'js/chat.js' %}" defer></script>
