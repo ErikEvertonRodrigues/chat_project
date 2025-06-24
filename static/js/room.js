@@ -27,6 +27,7 @@ function appendMessage(sender, message, timestamp, isHistory) {
     //After: Add logic with isHistory, but for now let's make it simple
 
     div.innerHTML = `${sender}: ${message} <br> ${timestamp}`
+    div.classList.add("bg-room-base", "inline-block", "w-fit", "rounded-lg", "p-2", "text-white");
     container.appendChild(div)
 }
 

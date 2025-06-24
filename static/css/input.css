@@ -6,4 +6,11 @@
     --color-auth-button: #247DEC;
     --color-index-background: #F7E4C8;
     --color-index-input: #FB734B;
+    --color-index-input-hover: #c54018;
+    --color-room-background: #8E2F10;
+    --color-room-secundary: #F9A88B;
+    --color-room-button: #C54018;
+    --color-room-button-hover: #DF623A;
+    --color-room-base: #C54018;
+    --color-room-offwhite: #FFF8F5;
 }
