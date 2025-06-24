@@ -4,7 +4,7 @@
 
 {% block content %}
     <main class="h-screen bg-room-background p-2 relative">
-        <div class="bg-room-secundary h-[calc(100%-60px)] rounded-lg p-1 flex flex-col gap-1" id="chat-log"></div>
+        <div class="bg-room-secundary h-[calc(100%-60px)] rounded-lg p-1 flex flex-col gap-1 overflow-y-auto scroll-m-2" id="chat-log"></div>
         <div class="fixed bottom-1 w-[100%] flex justify-around">
             <input class="bg-room-secundary h-[60px] text-black text-[18px] w-[94%] rounded-lg outline-none " id="chat-message-input" type="text" size="100"><br>
             <input class="cursor-pointer right-0 w-[60px] h-[60px] mr-2 rounded-full bg-room-button  text-white text-[18px] hover:bg-room-button-hover"

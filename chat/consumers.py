@@ -21,7 +21,7 @@ class ChatConsumer(WebsocketConsumer):
         messages = Message.objects.filter(room=room).order_by("-timestamp")[:50]
 
 
-        for message in messages:
+        for message in reversed(messages):
             self.send(text_data=json.dumps({
                 "type": "chat.history",
                 "message": message.content,
@@ -39,13 +39,13 @@ class ChatConsumer(WebsocketConsumer):
             text_data_json = json.loads(text_data)
             message = text_data_json["message"]
 
-            sender, _ = User.objects.get_or_create(username="anon")
+            user = self.scope["user"]
 
             room, _ = ChatRoom.objects.get_or_create(name=self.room_name)
 
             message_obj = Message.objects.create(
                 room=room,
-                sender=sender,
+                sender=user,
                 content=message
             )
 
@@ -54,7 +54,7 @@ class ChatConsumer(WebsocketConsumer):
                 {
                     "type": "chat.message",
                     "message": message_obj.content,
-                    "sender": message_obj.sender.username,
+                    "sender": user.username,
                     "timestamp": message_obj.timestamp.isoformat()
                 }
             )
