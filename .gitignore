@@ -4,3 +4,6 @@ db.sqlite3
 node_modules/
 static/css/output.css
 
+#Django
+__pycache__/
+*.py[cod]
