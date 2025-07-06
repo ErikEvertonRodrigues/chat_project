@@ -2,7 +2,6 @@ from django.contrib.auth import get_user_model
 from ..models import ChatRoom, Message
 import pytest
 
-# Create your tests here.
 user_model = get_user_model()
 room_name = "room-name-test"
 @pytest.mark.django_db
